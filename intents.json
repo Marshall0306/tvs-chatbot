@@ -1,0 +1,172 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "How are you",
+        "Is anyone there?",
+        "Hello",
+        "Good day"
+      ],
+      "responses": [
+        "Hello! Please share your requirements and preferences for your purchase.<br> What is your name?\n"
+      ]
+    },
+    {
+      "tag": "name_introduction",
+      "patterns": [
+        "My name is (.*)",
+        "I am (.*)",
+        "Call me (.*)",
+        "My name's (.*)"
+      ],
+      "responses": [
+        "Nice to meet you, %1!.Provide your contact number"
+      ]
+    },
+    {
+      "tag": "contact_number",
+      "patterns": [
+        "+1234567890",
+        "1234567890",
+        "+1 234 567 890",
+        "234-567-8900",
+        "My phone number is (.*)",
+        "You can reach me at (.*)"
+      ],
+      "responses": [
+        "Got it! Your contact number is %1.Provie your Email address."
+      ]
+    },
+    {
+      "tag": "email_address",
+      "patterns": [
+        "example@example.com",
+        "my email is (.*)",
+        "contact me at (.*)",
+        "you can email me at (.*)"
+      ],
+      "responses": [
+        "Got it! Your email address is %1. Select a product from the below list: <br>   <ol> <li>  Barcode Scanner </li> <li> Mouse </li><li>  Keyboard </li><li>  Thermal Receipt Printer </li> <li> Touch POS System</li> </ol>"
+
+      ]
+    }, 
+    {
+      "tag": "select_product",
+      "patterns": [
+        " Barcode Scanner",
+        " Touch POS System",
+        " Thermal Receipt Printer",
+        " Mouse",
+        " Keyboard",
+        " Mouse, Keyboard",
+        "Order 2 Barcode Scanner",
+        "I want 3 Barcode Scanner",
+        "Please get me 1 Keyboard",
+        "Add 4 Thermal Receipt Printers",
+        "I'd like 2 Touch POS Systems",
+        "Can I have 1 Keyboard and 2 Mouse",
+        "I want to order 2 Barcode Scanners and 1 Thermal Receipt Printer",
+        "I would like to order 1 Barcode Scanner and 2 Keyboard",
+        "Please order 1 Touch POS System and 5 Mouse",
+        "Order 2 Barcode Scanner, Mouse",
+        "I need 1 Thermal Receipt Printer and 3 Keyboards",
+        "Get me 2 Touch POS Systems and 1 Mouse",
+        "Please include 1 Keyboard and 2 Mouse in my order"
+      ],
+      "responses": [
+        "Product Details are listed below':\n"
+      ]
+    },
+
+    {
+      "tag": "additional_order",
+      "patterns": [
+          "yes",
+          "sure",
+          "absolutely",
+          "definitely",
+          "no"
+      ],
+      "responses": [
+          "Please select the additional product name you'd like to order. <br>   <ol> <li>  Barcode Scanner </li> <li> Mouse </li><li>  Keyboard </li><li>  Thermal Receipt Printer </li> <li> Touch POS System</li> </ol>"
+      ]
+    },
+    {
+      "tag": "confirm_order",
+      "patterns": [
+          "CONFIRM",
+          "Yes, confirm my order",
+          "I confirm my order",
+          "Please confirm my order"
+      ],
+      "responses": [
+          "Your order has been confirmed! You are being directed to the checkout page..."
+      ]
+    },
+    
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you later", "Goodbye"],
+      "responses": [
+        "bye"
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
+      "responses": ["Happy to help!", "Any time!", "My pleasure"]
+    },
+    {
+      "tag": "items",
+      "patterns": [
+        "Which items do you have?",
+        "What kinds of items are there?",
+        "What do you sell?"
+      ],
+      "responses": [
+        "We sell coffee and tea",
+        "We have coffee and tea"
+      ]
+    },
+    {
+      "tag": "payments",
+      "patterns": [
+        "Do you take credit cards?",
+        "Do you accept Mastercard?",
+        "Can I pay with Paypal?",
+        "Are you cash only?"
+      ],
+      "responses": [
+        "We accept VISA, Mastercard and Paypal",
+        "We accept most major credit cards, and Paypal"
+      ]
+    },
+    {
+      "tag": "delivery",
+      "patterns": [
+        "How long does delivery take?",
+        "How long does shipping take?",
+        "When do I get my delivery?"
+      ],
+      "responses": [
+        "Delivery takes 2-4 days",
+        "Shipping takes 2-4 days"
+      ]
+    },
+    {
+      "tag": "funny",
+      "patterns": [
+        "Tell me a joke!",
+        "Tell me something funny!",
+        "Do you know a joke?"
+      ],
+      "responses": [
+        "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
+        "What did the buffalo say when his son left for college? Bison."
+      ]
+    }
+  ]
+}

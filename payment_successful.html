@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #000;
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            text-align: center;
+            overflow: hidden;
+            height: 100vh;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            padding: 50px;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 600;
+        }
+
+        .success-message {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #28a745;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 50px;
+            box-shadow: 0 4px 6px rgba(0, 123, 255, 0.3);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            box-shadow: 0 6px 10px rgba(0, 123, 255, 0.5);
+        }
+
+        .firework {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.8);
+            animation: explode 1s ease-out forwards;
+        }
+
+        @keyframes explode {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(5);
+                opacity: 0;
+            }
+        }
+
+        .confetti {
+            position: absolute;
+            width: 8px;
+            height: 16px;
+            background-color: #ff4081;
+            opacity: 0.8;
+            animation: fall 2s linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100%) rotate(0deg);
+            }
+
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+
+        .confetti:nth-child(odd) {
+            background-color: #00bcd4;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Payment Successful!</h1>
+        <p class="success-message">Thank you for your purchase!</p>
+        <p>Your order has been processed successfully.</p>
+        <a href="http://127.0.0.1:5000" class="btn btn-primary">Return to Home</a>
+    </div>
+
+    <script>
+        const body = document.body;
+
+        for (let i = 0; i < 30; i++) {
+            const firework = document.createElement('div');
+            firework.classList.add('firework');
+            firework.style.left = `${Math.random() * 100}vw`;
+            firework.style.top = `${Math.random() * 100}vh`;
+            firework.style.animationDelay = `${Math.random() * 1.5}s`;
+            firework.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
+            body.appendChild(firework);
+
+            firework.addEventListener('animationend', () => firework.remove());
+        }
+
+        
+        for (let i = 0; i < 100; i++) {
+            const confetti = document.createElement('div');
+            confetti.classList.add('confetti');
+            confetti.style.left = `${Math.random() * 100}vw`;
+            confetti.style.animationDelay = `${Math.random() * 1.5}s`;
+            confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+            body.appendChild(confetti);
+
+            confetti.addEventListener('animationend', () => confetti.remove());
+        }
+    </script>
+</body>
+
+</html>
